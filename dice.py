@@ -1,5 +1,11 @@
 import random
 import inflect
+from deep_translator import GoogleTranslator
+
+
+language='en' #what is your language mate? 
+#print(GoogleTranslator().get_supported_languages(as_dict=True))#un comment this to make it show supported langs
+
 total_sides = 20 #makes since?
 PossibleSen = [#God save me
     'You rolled an ', 
@@ -24,18 +30,25 @@ PossibleSen = [#God save me
     'The stars have aligned to give you a ', 
     'And the number is... ', 
     'Here comes the big one... ', 
-    'With a flick of the wrist, you rolled a ', 
-    'Time to celebrate! You got a ', 
+    'With a flick of the wrist, you rolled a ',
     'And just like that, it’s a ', 
     'The suspense is over, you rolled a ', 
     'Your destiny reveals... ',
     'You’ve rolled the mystical number of ', 
     'God, Glory, and Dice, ',
     'And You Won... a ',
+    'what do you get when you roll a dice? ',
+    'What do you like about this ',
+    '1+1=',
 ]
 s=len(PossibleSen)
 def n2t(num):
     return(inflect.engine().number_to_words(num))
+def trans(text):
+    if language != 'en':
+        return(GoogleTranslator(source='auto', target=language).translate(text))
+    else:
+        return(text)
 while(True):
     a=n2t(random.randrange(0,total_sides))
-    input(PossibleSen[random.randrange(0,s)]+a)
+    input(trans(PossibleSen[random.randrange(0,s)]+a))
