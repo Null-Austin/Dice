@@ -2,5 +2,7 @@
 This is dice, dice is a dice
 # how to download?
 ```
-pip install -r requests.txt
+git clone https://github.com/Null-Austin/Dice
+cd Dice
+pip install -r requirements.txt
 ```
