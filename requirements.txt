@@ -1,2 +1,4 @@
 inflect
-deep-translator
+termcolor
+ast
+os
