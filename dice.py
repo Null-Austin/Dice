@@ -7,7 +7,7 @@ from os import system, name
 
 
 
-language='en' #what is your language mate? 
+# not used no more!? language='en' #what is your language mate? 
 #print(GoogleTranslator().get_supported_languages(as_dict=True))#un comment this to make it show supported langs
 
 total_sides = 20 #makes since?
